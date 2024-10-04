@@ -32,23 +32,23 @@ def map_mls_to_grid(mls_sequence, rows, cols):
     
     return grid
 
-# Function to visualize the grid
-def plot_grid(grid):
-    fig, ax = plt.subplots()
-    ax.imshow(grid, cmap='binary', interpolation='none')
+# # Function to visualize the grid
+# def plot_grid(grid):
+#     fig, ax = plt.subplots()
+#     ax.imshow(grid, cmap='binary', interpolation='none')
 
-    # Add grid lines and labels
-    ax.set_xticks(np.arange(grid.shape[1]) - 0.5, minor=True)
-    ax.set_yticks(np.arange(grid.shape[0]) - 0.5, minor=True)
-    ax.grid(which="minor", color="black", linestyle='-', linewidth=2)
+#     # Add grid lines and labels
+#     ax.set_xticks(np.arange(grid.shape[1]) - 0.5, minor=True)
+#     ax.set_yticks(np.arange(grid.shape[0]) - 0.5, minor=True)
+#     ax.grid(which="minor", color="black", linestyle='-', linewidth=2)
     
-    # Annotate grid cells
-    for i in range(grid.shape[0]):
-        for j in range(grid.shape[1]):
-            text = "O" if grid[i, j] == 1 else "X"
-            ax.text(j, i, text, ha="center", va="center", color="red" if grid[i, j] == 1 else "blue")
+#     # Annotate grid cells
+#     for i in range(grid.shape[0]):
+#         for j in range(grid.shape[1]):
+#             text = "O" if grid[i, j] == 1 else "X"
+#             ax.text(j, i, text, ha="center", va="center", color="red" if grid[i, j] == 1 else "blue")
     
-    return fig
+#     return fig
 
 # Streamlit App
 def main():
@@ -83,8 +83,8 @@ def main():
             
             # Plot the grid showing where to place holes
             st.write("Grid representation of the acoustic panel (O = Hole, X = No Hole):")
-            fig = plot_grid(grid)
-            st.pyplot(fig)
+            # fig = plot_grid(grid)
+            # st.pyplot(fig)
             
         else:
             st.error(f"The seed length ({len(seed)}) does not match the degree ({degree}).")
