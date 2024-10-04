@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # Function to generate Maximum Length Sequence (MLS) using LFSR
 def generate_mls(degree, seed, taps):
